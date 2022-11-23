@@ -1,0 +1,280 @@
+/* mobile: 300px */
+#current_html {
+  color: #972B75;
+  background-color: white;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+body {
+  font-family: "Century Gothic", sans-serif; 
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.skip a {
+  background: white;
+  position: absolute;
+  top: -40px; 
+  left: 0;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+}
+
+.skip a:focus {
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+}
+
+.skip a:hover {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+nav li {
+  padding-right: 20px;
+}
+
+nav {
+  background-color: #972B75;
+  padding: 10px 0;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+nav a:focus {
+  border: 2px solid orange;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
+
+.container {
+  display: grid;
+  margin: 0 auto;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10% 65% 10% 15%;
+  gap: 6px;
+}
+
+header {
+  grid-row: 1 / span 1;
+}
+
+main {
+  grid-row: 2 / span 1;
+}
+
+h1 {
+  font-family: "Poppins", "Century Gothic", sans-serif; 
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  color: #9E2F7B;
+  margin-top: 2%;
+}
+
+h2 {
+  font-family: "Century Gothic", sans-serif; 
+  font-size: 1.25em;
+  font-weight: bold; 
+  margin-top: 4%;
+}
+
+.introduction_text {
+  padding: 30px;
+  background-image: url("../images/introduction.jpg"); 
+  background-size: cover;
+}
+
+#island {
+  margin-top: 4%;
+}
+
+#fontawesome {
+  margin-top: 10px;
+  display: flex;
+}
+
+#introduction {
+  margin-top: 20px;
+}
+
+main ul {
+  padding: 10px;
+}
+
+aside {
+  width: 90%;
+  font-size: 0.75em;
+  margin-left: 2%;
+  padding: 2%;
+  font-style: italic;
+  background-color: lightgray;
+  grid-row: 3 / span 1;
+  overflow: scroll;
+}
+
+#gansu {
+  display: none;
+}
+
+footer {
+  font-size: 0.75em;
+  color: white;
+  background-color: #521940;
+  padding-top: 10px;
+  text-align: center;
+  grid-row: 4 / span 1;
+  align-self: end;
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#island {
+  animation-name: FadeIn;
+  animation-duration: 5s;
+  transition-timing-function: linear;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+#island {
+  animation-name: none;
+}
+}
+
+/* tablet: 500px */
+@media all and (min-width: 400px) {
+  .nav_links {
+    display: flex;
+    justify-content: right;
+  } 
+  
+  .container {
+    grid-template-rows: 5% 15% 35% 25% 10% 10%;
+  }
+  
+  #gansu {
+    display: grid;
+    grid-row: 4 / span 1;
+  }
+
+  #gansu video {
+    max-width: 60%;
+    margin-left: 20%;
+  }
+  
+  #play {
+    margin-left: 20%;
+  }
+
+  /* control box */
+  .ctrl-box {
+    max-width: 60%;
+    margin-left: 20%;
+  }
+
+  .ctrl-box .progress-box {
+    position: relative;
+    height: 5px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .ctrl-box .progress-box .progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background:#972B75;
+  }
+
+  .ctrl-box .progress-time {
+    display: inline-block;
+  }
+
+  aside {
+    grid-row: 5 / span 1;
+  }
+
+  footer {
+    grid-row: 6 / span 1;
+  }
+}
+
+/* desktop: 900px */
+@media all and (min-width: 700px) {
+  .nav_links {
+    justify-content: left;
+  }
+
+  .container {
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 5% 20% 30% 30% 15%;
+  }
+
+  header {
+    grid-row: 1 / span 1;
+    grid-column: 1 / -1;
+  }
+
+  main {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+  }
+
+  aside {
+    margin-top: 25%;
+    margin-left: 4%;
+    margin-right: 4%;
+    padding: 4%;
+    width: 75%;
+    height: 50%;
+    grid-row: 3 / span 2;
+  }
+  
+  #gansu video {
+    max-width: 80%;
+    margin-left: 10%;
+  }
+
+  #play {
+    margin-left: 10%;
+  }
+
+  .ctrl-box {
+    max-width: 80%;
+    margin-left: 10%;
+  }
+
+  footer {
+    grid-row: 5 / span 1;
+    grid-column: 1 / -1;
+  }
+}
